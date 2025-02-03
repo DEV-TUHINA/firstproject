@@ -1,0 +1,70 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Control Flow</h1>
+    <p>ifelse...</p>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        @if(div1visible){
+            <div class="bg-danger p-3 text-center">
+                <h4>Div-1</h4>
+            </div>
+        }
+    </div>
+    <div class="col-3">
+        
+        @if(iswarningdiv2visible){
+            <div class="bg-danger p-3 text-center">
+                <h4>Div-2</h4>
+            </div>
+        }@else{
+            <div class="bg-success p-3 text-center">
+                <h4>Div-2</h4>
+            </div>
+        }
+       
+    </div>
+    <div class="col-3">
+        @if(num1 === num2){
+            <div class="bg-secondary p-3 text-center">
+                <h4>Div-3</h4>
+            </div>
+        } 
+    </div>
+    <div class="col-3">
+        <div class="bg-info p-3 text-center">
+            @if(selectedStatus == "INDIA"){
+                <h4>INDIA</h4>
+            }@else if(selectedStatus == "CHINA"){
+                <h4>CHINA</h4>
+            }@else{
+                <h4>USA</h4>
+            }    
+        </div>
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-primary" (click)="div1show()">Show</button>
+        <button class="btn btn-danger" (click)="div1hide()">Hide</button>
+    </div>
+    <div class="col-3 text-center">    
+        <button class="btn btn-success" (click)="div2toggle()">Toggle</button>
+    </div>
+    <div class="col-3 text-center">
+        <div class="p-3 text-center">
+            <input type="text" [(ngModel)] = "num1">
+            <input type="text" [(ngModel)] = "num2">
+        </div>
+    </div>
+    <div class="col-3 text-center">
+        <div class="p-3 text-center">
+            <input type="checkbox" >
+            <select [(ngModel)] = "selectedStatus">
+                <option>Select</option>
+                <option value="CHINA">CHINA</option>
+                <option value="INDIA">INDIA</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+    </div>
+</div>

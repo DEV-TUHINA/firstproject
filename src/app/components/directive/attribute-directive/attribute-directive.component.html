@@ -1,0 +1,96 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Attribute Directive</h1>
+    <p>ngClass...</p>
+    <button class="btn btn-primary" (click)="navigatetoStructural()">Go to Attribute Directive</button>
+
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass] = "coloradd">
+            <h4>Div-1</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-primary p-3 text-center" [ngClass] = "iscolorblue == true ? 'bg-warning' : 'bg-danger'">
+            <h4>Div-2</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass] ="firstbox == secondbox ? 'bg-success':'bg-danger'">
+            <h4>Div-3</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-info p-3 text-center" [ngClass] = "isdiv4checked == true ? 'bg-warning' : 'bg-danger'">
+            <h4>Div-4</h4>
+        </div>
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="redcoloradd()">Add Red</button>
+        <button class="btn btn-primary" (click)="bluecoloradd()">Add Blue</button>
+    </div>
+    <div class="col-3 text-center">    
+        <button class="btn btn-success" (click)="isactivecheck()">Toggle</button>
+    </div>
+    <div class="col-3 text-center">
+        <div class="p-3 text-center">
+            <input type="text" [(ngModel)] = "firstbox">
+            <input type="text" [(ngModel)] = "secondbox">
+        </div>
+    </div>
+    <div class="col-3 text-center">
+        <div class="p-3 text-center">
+            <input type="checkbox" [(ngModel)] = "isdiv4checked">
+             <select>
+                <option>Select</option>
+                <option value="CHINA">CHINA</option>
+                <option value="INDIA">INDIA</option>
+                <option value="USA">USA</option>
+            </select> 
+        </div>
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <th>Gender</th>
+                    <th>Marks</th>
+                    <td>Active</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let student of studentList">
+                    <td>{{student.studenId}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.gender}}</td>
+                    <td>
+                        <div class="progress"> 
+                            <div class="progress-bar" [ngStyle] ="{'width' : student.marks+'%'}">
+                                {{student.marks}}
+                            </div>
+                        </div></td>
+                    <td [ngStyle]="{'background-color' : student.isActive ? 'yellow' : 'green'}">
+                        <span>
+                            {{student.isActive ? 'Active' : 'In-Active'}}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-5">
+        <div [ngStyle] = "customStyle">
+            dfg
+        </div>
+    </div>
+</div>     
+
+
+
+

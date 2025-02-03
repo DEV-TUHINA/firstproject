@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-4">
+        <p>one way data binding</p>
+    </div>
+   
+    <div class="col-4">
+        <button class="btn btn-success" (click)="showAlert('This is alert')">Show</button>
+        <span [class]="myClassname" (click)="showAlert('This is from span')">Span</span>
+        <button class="btn btn-success" (click)="changeCourseName()">Clickme tochange course</button>
+    </div>
+
+    <div class="col-4">
+        two way data binding using ngModel
+        <input type="text" [(ngModel)]="courseName"> 
+        <select [(ngModel)] = "stateName">
+            <option>select</option>
+            <option value="west Bengal">west Bengal</option>
+            <option value="Goa">Goa</option>
+            <option value="Bihar">Bihar</option>
+        </select>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+            interpolation
+            <h4>{{courseName}}</h4>
+            <input type="text" value="{{courseName}}">
+            <input type="{{inputType}}"/>
+        </div>
+        <div class="row">
+            property binding
+            <div [class]="myClassname">Danger</div>
+            <input [type]="inputType">
+        </div>
+    </div>
+    <div class="col-6">
+        <h2>{{firstName()}}</h2>
+    </div>
+</div>
